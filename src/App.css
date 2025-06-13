@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+:root {
+  --color-coffee: #4B2E2B;
+  --color-latte: #DCC7AA;
+  --color-ivory: #F9F6F1;
+}
+
+.customBtnColors{
+    background-color: var(--color-coffee);
+    color: white;
+}
+
+html {
+  scroll-behavior: smooth;
+}
