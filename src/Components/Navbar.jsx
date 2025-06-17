@@ -12,7 +12,9 @@ const Navbar = () => {
       <div className="navContainer flex items-center justify-between h-20 px-6">
         {/* Logo */}
         <div className="navLeft flex items-center">
-          <img src="assets/img/CafeLogo.png" alt="" className="w-28 h-full" />
+          <a href="#home">
+            <img src="assets/img/CafeLogo.png" alt="" className="w-28 h-full" />
+          </a>
         </div>
 
         {/* Desktop Nav Links */}
@@ -39,9 +41,7 @@ const Navbar = () => {
 
         {/* Desktop Button */}
         <div className="hidden md:block">
-          <a href="#cta">
-            <PrimaryButton>Create Free Account</PrimaryButton>
-          </a>
+          <PrimaryButton>Create Free Account</PrimaryButton>
         </div>
 
         {/* Mobile Hamburger Button */}

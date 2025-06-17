@@ -1,5 +1,4 @@
 import React from "react";
-import MenuSlider from "./MenuSlider";
 
 const Menu = () => {
   const menuItems = [
@@ -19,13 +18,14 @@ const Menu = () => {
       desc: "Flaky, buttery and freshly baked every morning.",
     },
     {
-      name: "Fresh Croissant",
+      name: "Cream Pastry",
       img: "/assets/img/Pastry1.jpg",
-      desc: "Flaky, buttery and freshly baked every morning.",
+      desc: "Fluffy cake, served with the fresh cream on the top",
     },
   ];
+
   return (
-    <div className="menu-highlights py-12 px-4 text-center">
+    <div className="menu-highlights py-12 px-4 sm:px-6 md:px-10 text-center">
       <h2 className="text-3xl font-semibold text-primary mb-4">
         Our Signature Menu
       </h2>
@@ -34,10 +34,31 @@ const Menu = () => {
         treats — here's what you shouldn't miss.
       </p>
 
-      {/* Slider */}
+      {/* Responsive Grid for md+, horizontal scroll for small screens */}
+      <div className="md:grid md:grid-cols-2 lg:grid-cols-4 gap-6 hidden">
+        {menuItems.map((item, index) => (
+          <div
+            key={index}
+            className="rounded-xl overflow-hidden shadow-md bg-white"
+          >
+            <img
+              src={item.img}
+              alt={item.name}
+              className="h-48 w-full object-cover"
+            />
+            <div className="p-4">
+              <h3 className="text-xl font-semibold text-gray-800">
+                {item.name}
+              </h3>
+              <p className="text-sm text-gray-500 mt-1">{item.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
 
-      <div className="overflow-x-auto whitespace-nowrap">
-        <div className="flex gap-6 justify-between">
+      {/* Mobile Horizontal Scroll */}
+      <div className="md:hidden overflow-x-auto">
+        <div className="flex gap-4">
           {menuItems.map((item, index) => (
             <div
               key={index}
@@ -52,9 +73,7 @@ const Menu = () => {
                 <h3 className="text-xl font-semibold text-gray-800">
                   {item.name}
                 </h3>
-                <p className="text-sm text-gray-500 mt-1 text-wrap">
-                  {item.desc}
-                </p>
+                <p className="text-sm text-gray-500 mt-1">{item.desc}</p>
               </div>
             </div>
           ))}

@@ -29,7 +29,7 @@ const HeroSection = () => {
   ];
 
   return (
-    <section className="hero-carousel">
+    <section className="hero-carousel" id="home">
       <Carousel
         autoPlay
         infiniteLoop
@@ -67,7 +67,9 @@ const HeroSection = () => {
                 <p className="text-lg text-wrap md:text-xl mb-6 text-white/80">
                   {slide.subheading}
                 </p>
-                <PrimaryButton>Explore Our Menu</PrimaryButton>
+                <a href="#menu">
+                  <PrimaryButton>Explore Our Menu</PrimaryButton>
+                </a>
               </motion.div>
             </div>
           </div>
